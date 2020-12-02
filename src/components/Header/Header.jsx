@@ -16,17 +16,17 @@ const Header = () => {
         <ul className="nav-ul">
           <li className="nav-li">
             <Link className="nav-link" to="/">
-              Home
+              <i class="fas fa-store"></i> Home
             </Link>
           </li>
           <li className="nav-li">
             <Link className="nav-link" to="/cart">
-              Cart
+              <i class="fas fa-shopping-cart"></i> Cart
             </Link>
           </li>
           <li className="nav-li">
             <Link className="nav-link" to="/login">
-              Login
+              <i class="fas fa-user"></i> Login
             </Link>
           </li>
         </ul>
