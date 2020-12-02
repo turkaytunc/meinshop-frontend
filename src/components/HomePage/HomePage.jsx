@@ -19,7 +19,7 @@ const HomePage = () => {
                 <li className="product-listitem">{e.title}</li>
                 <li className="product-listitem">{e.price}</li>
                 <li className="product-listitem">
-                  <img src={e.img} alt="" />
+                  <img src={e.img} alt="product" />
                 </li>
                 <li className="product-listitem">{e.description}</li>
               </ul>

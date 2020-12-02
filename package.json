@@ -18,6 +18,7 @@
     "build": "react-scripts build",
     "commit": "sh commit.sh",
     "test": "react-scripts test",
+    "testAll": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
