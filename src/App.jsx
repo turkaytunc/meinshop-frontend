@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import Login from './components/Login/Login';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   return (
@@ -12,9 +13,7 @@ function App() {
         <Header />
         <main>
           <Switch>
-            <Route exact path="/">
-              <h1>MeinShop Home</h1>
-            </Route>
+            <Route exact path="/" component={HomePage} />
             <Route path="/cart" component={Cart} />
             <Route path="/login" component={Login} />
           </Switch>
