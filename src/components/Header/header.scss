@@ -1,0 +1,37 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 1em;
+  background: #353535;
+  color: aliceblue;
+}
+
+.nav-brand {
+  list-style: none;
+}
+.nav-brand-link {
+  text-decoration: none;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+}
+
+.nav-ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-li {
+  margin-left: 2em;
+}
+
+.nav-link {
+  text-decoration: none;
+  &:visited,
+  :active {
+    color: aliceblue;
+  }
+  &:hover {
+    color: rgb(145, 215, 233);
+  }
+}
