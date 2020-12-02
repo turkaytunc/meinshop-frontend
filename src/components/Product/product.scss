@@ -32,6 +32,7 @@
   grid-template-columns: 1fr;
   width: 100%;
   max-width: 250px;
+  height: 100%;
   word-wrap: break-word;
 }
 
@@ -44,4 +45,9 @@
 
 .product-description {
   padding: 1em;
+}
+
+.product-price {
+  margin-top: 1em;
+  align-self: flex-end;
 }

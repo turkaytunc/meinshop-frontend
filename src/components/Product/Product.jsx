@@ -11,10 +11,10 @@ const Product = ({ product }) => {
         {/* <li className="product-listitem">{product.category}</li> */}
         {/* <li className="product-listitem">{product.id}</li> */}
         <li className="product-listitem">{product.title}</li>
-        <li className="product-listitem">{product.price}</li>
-        <li className="product-listitem product-description">
+        {/* <li className="product-listitem product-description">
           {product.description}
-        </li>
+        </li> */}
+        <li className="product-listitem product-price">{product.price}$</li>
       </ul>
     </ul>
   );
