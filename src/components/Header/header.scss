@@ -27,6 +27,8 @@
 
 .nav-link {
   text-decoration: none;
+  transition: color 1s ease;
+
   &:visited,
   :active {
     color: aliceblue;
