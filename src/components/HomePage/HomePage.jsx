@@ -10,11 +10,13 @@ const HomePage = () => {
     getProducts().then((e) => setProducts(e));
   }, []);
 
-  const fetchProducts = () => {
-    return products.map((e) => <Product key={e.id} product={e} />);
-  };
-
-  return <>{products ? fetchProducts() : null}</>;
+  return (
+    <>
+      {products
+        ? products.map((e) => <Product key={e.id} product={e} />)
+        : null}
+    </>
+  );
 };
 
 export default HomePage;
