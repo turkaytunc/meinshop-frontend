@@ -10,11 +10,11 @@ const HomePage = () => {
 
   const fetchProducts = () => {
     return products.map((e) => (
-      <ul key={e.id} className="product-list">
+      <ul key={e.id} className="product-container">
         <li className="product-listitem">
           <img height="200px" src={e.image} alt="product" />
         </li>
-        <ul>
+        <ul className="product-misc">
           <li className="product-listitem">{e.category}</li>
           <li className="product-listitem">{e.id}</li>
           <li className="product-listitem">{e.title}</li>
