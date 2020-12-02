@@ -10,7 +10,7 @@ it('should contain class called `product-price`', () => {
   expect(container.firstChild).toHaveClass('product-price');
 });
 
-it('should have 3 classes', () => {
+it('should have 3 or more classes', () => {
   const { container } = render(<PriceTag price={5} />);
   expect(container.firstElementChild.classList.length).toBeGreaterThanOrEqual(
     3

@@ -1,7 +1,11 @@
-const getProducts = async () => {
-  const products = await fetch('https://fakestoreapi.com/products');
-  const parsedProducts = await products.json();
-  return parsedProducts;
+const getProducts = async (fetch, url) => {
+  try {
+    const products = await fetch(url);
+    const parsedProducts = await products.json();
+    return parsedProducts;
+  } catch (error) {
+    return Promise.reject(`Cant fetch products`);
+  }
 };
 
 export default getProducts;

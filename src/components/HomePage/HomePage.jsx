@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import getProducts from '../../util/getProducts';
 import Product from '../Product/Product';
+import productsFetchUrl from '../../util/productsFetchUrl';
 import './homepage.scss';
 
 const HomePage = () => {
   const [products, setProducts] = useState();
 
   useEffect(() => {
-    getProducts().then((e) => setProducts(e));
+    async function fetchData() {
+      try {
+        const items = await getProducts(window.fetch, productsFetchUrl);
+        setProducts(items);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
   }, []);
 
   return (
