@@ -7,7 +7,18 @@ const HomePage = () => {
   const [products, setProducts] = useState();
 
   useEffect(() => {
-    getProducts().then((e) => setProducts(e));
+    async function fetchData() {
+      try {
+        const items = await getProducts(
+          window.fetch,
+          'https://fakestoreapi.com/products'
+        );
+        setProducts(items);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
   }, []);
 
   return (
