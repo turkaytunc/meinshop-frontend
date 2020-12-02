@@ -9,6 +9,13 @@ const Header = () => {
         <ul className="nav-brand">
           <li>
             <Link className="nav-brand-link" to="/">
+              <i
+                class="fas fa-globe-europe"
+                style={{
+                  fontSize: '2em',
+                  marginRight: '0.1em',
+                }}
+              ></i>
               MeinShop
             </Link>
           </li>
