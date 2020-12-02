@@ -1,0 +1,32 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 1em;
+  background: #222;
+  color: aliceblue;
+}
+
+.nav-brand {
+  list-style: none;
+}
+.nav-brand-link {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.nav-ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-li {
+  margin-left: 2em;
+}
+
+.nav-link {
+  text-decoration: none;
+  &:visited,
+  :active {
+    color: aliceblue;
+  }
+}
