@@ -11,7 +11,7 @@ const HomePage = () => {
   }, []);
 
   const fetchProducts = () => {
-    return products.map((e) => <Product product={e} />);
+    return products.map((e) => <Product key={e.id} product={e} />);
   };
 
   return <>{products ? fetchProducts() : null}</>;

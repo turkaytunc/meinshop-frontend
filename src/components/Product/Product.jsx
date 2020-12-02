@@ -1,9 +1,10 @@
 import React from 'react';
+import PriceTag from '../PriceTag/PriceTag';
 import './product.scss';
 
 const Product = ({ product }) => {
   return (
-    <ul key={product.id} className="product-container">
+    <ul className="product-container">
       <li className="product-listitem">
         <img height="200px" src={product.image} alt="product" />
       </li>
@@ -14,7 +15,7 @@ const Product = ({ product }) => {
         {/* <li className="product-listitem product-description">
           {product.description}
         </li> */}
-        <li className="product-listitem product-price">{product.price}$</li>
+        <PriceTag price={product.price} />
       </ul>
     </ul>
   );

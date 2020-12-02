@@ -6,7 +6,8 @@
   padding: 0.5em;
   width: 100%;
   min-height: 250px;
-
+  justify-content: center;
+  align-items: center;
   border: 1px solid #999;
   border-radius: 1em;
 
@@ -45,9 +46,4 @@
 
 .product-description {
   padding: 1em;
-}
-
-.product-price {
-  margin-top: 1em;
-  align-self: flex-end;
 }
