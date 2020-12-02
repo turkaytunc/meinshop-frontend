@@ -10,7 +10,7 @@ const Header = () => {
           <li>
             <Link className="nav-brand-link" to="/">
               <i
-                class="fas fa-globe-europe"
+                className="fas fa-globe-europe"
                 style={{
                   fontSize: '2em',
                   marginRight: '0.1em',
@@ -23,17 +23,17 @@ const Header = () => {
         <ul className="nav-ul">
           <li className="nav-li">
             <Link className="nav-link" to="/">
-              <i class="fas fa-store"></i> Home
+              <i className="fas fa-store"></i> Home
             </Link>
           </li>
           <li className="nav-li">
             <Link className="nav-link" to="/cart">
-              <i class="fas fa-shopping-cart"></i> Cart
+              <i className="fas fa-shopping-cart"></i> Cart
             </Link>
           </li>
           <li className="nav-li">
             <Link className="nav-link" to="/login">
-              <i class="fas fa-user"></i> Login
+              <i className="fas fa-user"></i> Login
             </Link>
           </li>
         </ul>
