@@ -1,9 +1,9 @@
 .product-container {
   list-style: none;
   display: flex;
-  align-items: center;
-  margin: 1em;
+  flex-direction: column;
 
+  margin-top: 1em;
   padding: 0;
   min-height: 250px;
   border: 1px solid #999;
@@ -11,13 +11,18 @@
 
   ul {
     list-style: none;
+    padding: 1em 0.5em;
   }
   img {
-    margin-left: 1em;
+    margin: 1em 1em;
     border-radius: 1em;
     height: 200px;
     max-width: 175px;
     min-width: 175px;
+    transition: transform 0.5s ease;
+    &:hover {
+      transform: scale(1.04);
+    }
   }
 }
 

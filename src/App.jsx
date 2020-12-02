@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <main>
+        <main className="main-container">
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/cart" component={Cart} />
