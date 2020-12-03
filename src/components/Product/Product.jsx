@@ -4,7 +4,7 @@ import Rating from '../Rating/Rating';
 import './product.scss';
 
 const Product = ({ product }) => {
-  const numberOfPeople = Math.floor(Math.random() * 11);
+  const numberOfPeople = Math.floor(Math.random() * 10) + 1;
   const productRating = Math.random() * 6;
 
   return (
