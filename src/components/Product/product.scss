@@ -31,6 +31,7 @@
 .product-misc {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto auto;
   width: 100%;
   max-width: 250px;
   height: 100%;
@@ -46,4 +47,9 @@
 
 .product-description {
   padding: 1em;
+}
+
+.product-link {
+  text-decoration: none;
+  color: #333;
 }

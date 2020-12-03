@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import Login from './components/Login/Login';
 import HomePage from './components/HomePage/HomePage';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" component={HomePage} />
             <Route path="/cart" component={Cart} />
             <Route path="/login" component={Login} />
+            <Route path="/products/:id" component={ProductDetails} />
           </Switch>
         </main>
         <Footer />
