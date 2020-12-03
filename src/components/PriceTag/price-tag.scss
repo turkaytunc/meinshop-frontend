@@ -5,7 +5,7 @@
 
 .price-tag {
   color: purple;
-  font-size: 1.3em;
+  font-size: 1.2em;
   border: 1px solid #444;
   border-radius: 5px;
   padding: 0.2em 0;
@@ -13,5 +13,6 @@
   &:hover {
     color: white;
     background-color: purple;
+    cursor: pointer;
   }
 }
