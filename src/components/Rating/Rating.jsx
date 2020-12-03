@@ -9,20 +9,25 @@ const Rating = ({ productRating, numberOfPeople }) => {
   };
   return (
     <div className="rating-container">
-      <span>
-        <i className={calculateStarRate(productRating, 1, 0.5)}></i>
-      </span>
-      <span>
-        <i className={calculateStarRate(productRating, 2, 1.5)}></i>
-      </span>
-      <span>
-        <i className={calculateStarRate(productRating, 3, 2.5)}></i>
-      </span>
-      <span>
-        <i className={calculateStarRate(productRating, 4, 3.5)}></i>
-      </span>
-      <span>
-        <i className={calculateStarRate(productRating, 5, 4.5)}></i>
+      <div className="star-container">
+        <span>
+          <i className={calculateStarRate(productRating, 1, 0.5)}></i>
+        </span>
+        <span>
+          <i className={calculateStarRate(productRating, 2, 1.5)}></i>
+        </span>
+        <span>
+          <i className={calculateStarRate(productRating, 3, 2.5)}></i>
+        </span>
+        <span>
+          <i className={calculateStarRate(productRating, 4, 3.5)}></i>
+        </span>
+        <span>
+          <i className={calculateStarRate(productRating, 5, 4.5)}></i>
+        </span>
+      </div>
+      <span style={{ marginLeft: '0.3em' }}>
+        {numberOfPeople && numberOfPeople} people
       </span>
     </div>
   );
