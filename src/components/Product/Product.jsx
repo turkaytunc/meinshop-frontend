@@ -1,5 +1,6 @@
 import React from 'react';
 import PriceTag from '../PriceTag/PriceTag';
+import Rating from '../Rating/Rating';
 import './product.scss';
 
 const Product = ({ product }) => {
@@ -15,6 +16,7 @@ const Product = ({ product }) => {
         {/* <li className="product-listitem product-description">
           {product.description}
         </li> */}
+        <Rating productRating={Math.floor(Math.random() * 5 + 1)} />
         <PriceTag price={product.price} />
       </ul>
     </ul>
