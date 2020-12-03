@@ -9,9 +9,9 @@ const Product = ({ product }) => {
 
   return (
     <ul className="product-container">
-      <li className="product-listitem">
+      <a className="product-listitem" href={`/products/${product.id}`}>
         <img height="200px" src={product.image} alt="product" />
-      </li>
+      </a>
       <ul className="product-misc">
         {/* <li className="product-listitem">{product.category}</li> */}
         {/* <li className="product-listitem">{product.id}</li> */}
