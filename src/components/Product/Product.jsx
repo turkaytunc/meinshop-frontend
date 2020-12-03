@@ -4,6 +4,9 @@ import Rating from '../Rating/Rating';
 import './product.scss';
 
 const Product = ({ product }) => {
+  const numberOfPeople = Math.floor(Math.random() * 11);
+  const productRating = Math.random() * 6;
+
   return (
     <ul className="product-container">
       <li className="product-listitem">
@@ -16,7 +19,7 @@ const Product = ({ product }) => {
         {/* <li className="product-listitem product-description">
           {product.description}
         </li> */}
-        <Rating productRating={Math.floor(Math.random() * 5 + 1)} />
+        <Rating productRating={productRating} numberOfPeople={numberOfPeople} />
         <PriceTag price={product.price} />
       </ul>
     </ul>
