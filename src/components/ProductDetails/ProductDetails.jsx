@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Rating from '../Rating/Rating';
 
-const ProductDetails = () => {
+const ProductDetails = ({ match }) => {
+  const { id } = match.params;
+  useEffect(() => {}, []);
+
   return <div>Product Details</div>;
 };
 
