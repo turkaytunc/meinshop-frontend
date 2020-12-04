@@ -13,18 +13,14 @@ const HomePage = () => {
         const items = await getProducts(window.fetch, productsFetchUrl);
         setProducts(items);
       } catch (error) {
-        console.log(error);
+        console.log('Server Error');
       }
     }
     fetchData();
   }, []);
 
   return (
-    <>
-      {products
-        ? products.map((e) => <Product key={e.id} product={e} />)
-        : null}
-    </>
+    <>{products && products.map((e) => <Product key={e.id} product={e} />)}</>
   );
 };
 

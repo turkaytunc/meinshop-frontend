@@ -2,14 +2,14 @@ import React from 'react';
 import PriceTag from '../PriceTag/PriceTag';
 import Rating from '../Rating/Rating';
 import './product.scss';
-import { Link, Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
   const numberOfPeople = Math.floor(Math.random() * 10) + 1;
   const productRating = Math.random() * 6;
 
   return (
-    <ul className="product-container">
+    <div className="product-container">
       <Link
         className="product-listitem product-link"
         to={`/products/${product.id}`}
@@ -31,7 +31,7 @@ const Product = ({ product }) => {
         <Rating productRating={productRating} numberOfPeople={numberOfPeople} />
         <PriceTag price={product.price} />
       </ul>
-    </ul>
+    </div>
   );
 };
 
