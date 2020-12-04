@@ -9,7 +9,7 @@ const Product = ({ product }) => {
   const productRating = Math.random() * 6;
 
   return (
-    <ul className="product-container">
+    <div className="product-container">
       <Link
         className="product-listitem product-link"
         to={`/products/${product.id}`}
@@ -31,7 +31,7 @@ const Product = ({ product }) => {
         <Rating productRating={productRating} numberOfPeople={numberOfPeople} />
         <PriceTag price={product.price} />
       </ul>
-    </ul>
+    </div>
   );
 };
 

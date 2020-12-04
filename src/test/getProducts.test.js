@@ -14,7 +14,7 @@ describe('Fetch all products', () => {
     );
   });
 
-  it('should return error', () => {
+  it('should return error because of broken url', () => {
     return getProducts(
       window.fetch,
       'https://fakestoreapi.com/product'

@@ -23,8 +23,8 @@ const Rating = ({ productRating, numberOfPeople, starColor = '#f0dd0a' }) => {
         </span>
       </div>
       <span style={{ marginLeft: '0.3em' }}>
-        {numberOfPeople && numberOfPeople}{' '}
-        {numberOfPeople > 1 ? 'reviews' : 'review'}
+        {numberOfPeople && numberOfPeople}
+        {numberOfPeople > 1 ? ' reviews' : ' review'}
       </span>
     </div>
   );
