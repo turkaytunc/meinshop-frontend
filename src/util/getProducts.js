@@ -4,7 +4,7 @@ const getProducts = async (fetch, url) => {
     const parsedProducts = await products.json();
     return parsedProducts;
   } catch (error) {
-    return Promise.reject(`Cant fetch products`);
+    return `Cant fetch products`;
   }
 };
 

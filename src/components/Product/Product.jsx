@@ -2,7 +2,7 @@ import React from 'react';
 import PriceTag from '../PriceTag/PriceTag';
 import Rating from '../Rating/Rating';
 import './product.scss';
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 
 const Product = ({ product }) => {
   const numberOfPeople = Math.floor(Math.random() * 10) + 1;
