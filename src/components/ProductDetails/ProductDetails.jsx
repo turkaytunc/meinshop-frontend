@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Rating from '../Rating/Rating';
+// import Rating from '../Rating/Rating';
 import getProductById from '../../util/getProductById';
 import productsFetchUrl from '../../util/productsFetchUrl';
 
@@ -8,23 +8,24 @@ const ProductDetails = ({ match }) => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      let item;
+    let isMounted = true;
+    getProductById(window.fetch, productsFetchUrl, id)
+      .then((item) => {
+        if (isMounted) setProduct(item);
+      })
+      .catch((err) => console.error(err));
 
-      try {
-        item = await getProductById(window.fetch, productsFetchUrl, id);
-        setProduct(item);
-      } catch (error) {
-        console.error(error, '--> Cant fetch product!');
-      }
+    return () => {
+      isMounted = false;
     };
-    fetchProduct();
   }, [id]);
 
   return (
     <div>
       <p>Product Details</p>
-      <div>{product && product.title}</div>
+      <div data-testid={'product-title'}>
+        {product ? product.title : 'Loading..'}
+      </div>
       {/* <Rating numberOfPeople={5} productRating={4} starColor={'purple'} /> */}
     </div>
   );
