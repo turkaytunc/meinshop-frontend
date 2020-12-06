@@ -8,19 +8,27 @@ const HomePage = () => {
   const [products, setProducts] = useState();
 
   useEffect(() => {
+    let isMounted = true;
     async function fetchData() {
       try {
         const items = await getProducts(window.fetch, productsFetchUrl);
-        setProducts(items);
+        if (isMounted) setProducts(items);
       } catch (error) {
         console.log('Server Error');
       }
     }
     fetchData();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
-    <>{products && products.map((e) => <Product key={e.id} product={e} />)}</>
+    <div data-testid="home-page">
+      {products
+        ? products.map((e) => <Product key={e._id} product={e} />)
+        : 'Loading..'}
+    </div>
   );
 };
 
