@@ -13,7 +13,6 @@ const ProductDetails = ({ match }) => {
     let isMounted = true;
     getProductById(window.fetch, productsFetchUrl, id)
       .then((item) => {
-        console.log(item);
         if (isMounted) setProduct(item);
       })
       .catch((err) => console.error(err));

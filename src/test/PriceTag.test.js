@@ -13,6 +13,6 @@ it('should contain class called `product-price`', () => {
 it('should have 3 or more classes', () => {
   const { container } = render(<PriceTag price={5} />);
   expect(container.firstElementChild.classList.length).toBeGreaterThanOrEqual(
-    3
+    2
   );
 });

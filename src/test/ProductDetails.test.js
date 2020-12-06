@@ -20,7 +20,7 @@ it('should render loading.. then should render content', async () => {
 
   render(
     <Router history={history}>
-      <ProductDetails match={{ params: { id: 2 } }} />
+      <ProductDetails match={{ params: { id: '5fccda83acfe500d80c77fca' } }} />
     </Router>
   );
 

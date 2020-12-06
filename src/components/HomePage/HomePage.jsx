@@ -12,7 +12,6 @@ const HomePage = () => {
       try {
         const items = await getProducts(window.fetch, productsFetchUrl);
         setProducts(items);
-        console.log(items);
       } catch (error) {
         console.log('Server Error');
       }
