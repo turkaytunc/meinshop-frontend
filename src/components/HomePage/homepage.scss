@@ -1,0 +1,6 @@
+.homepage-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1em;
+  margin: 0.5em 1em;
+}

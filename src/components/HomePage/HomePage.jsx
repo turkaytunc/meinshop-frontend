@@ -24,7 +24,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div data-testid="home-page">
+    <div className="homepage-container" data-testid="home-page">
       {products
         ? products.map((e) => <Product key={e._id} product={e} />)
         : 'Loading..'}
