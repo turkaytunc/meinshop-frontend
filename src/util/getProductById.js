@@ -1,4 +1,4 @@
-const getProductById = async (fetch, url, id = 1) => {
+const getProductById = async (fetch, url, id) => {
   try {
     const product = await fetch(`${url}/${id}`);
     const parsedProduct = await product.json();
