@@ -8,9 +8,9 @@ describe('Fetch all products', () => {
     );
   });
 
-  it('should return a product with id equal to 1', () => {
+  it('should return a product with id `5fccda83acfe500d80c77fca`', () => {
     return getProducts(window.fetch, productsFetchUrl).then((data) =>
-      expect(data[0]).toHaveProperty('id', 1)
+      expect(data[0]).toHaveProperty('_id', '5fccda83acfe500d80c77fca')
     );
   });
 
