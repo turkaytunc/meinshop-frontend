@@ -4,7 +4,8 @@
   min-height: 10em;
   display: grid;
   grid-template-columns: max-content 1fr max-content;
-  border: 1px solid #ccc;
+  border: 1px solid purple;
+  border-radius: 5px;
 }
 
 .details-img-button {
@@ -29,8 +30,9 @@
 }
 
 .product-details-description-container {
-  margin: 2em 1em 1em 1em;
+  padding: 2em 1em 1em 1em;
   list-style: none;
+  border-left: 1px solid #ccc;
 }
 .product-details-description {
   margin-top: 5em;

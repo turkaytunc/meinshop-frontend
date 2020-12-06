@@ -52,8 +52,20 @@ const ProductDetails = ({ match }) => {
         </div>
         <div>In Stock</div>
         <div>
-          <button style={{ width: '100%', height: '3em', marginTop: '2em' }}>
-            Add to cart
+          <button
+            style={{
+              width: '100%',
+              height: '3em',
+              marginTop: '2em',
+              color: 'purple',
+              backgroundColor: 'white',
+              border: '1px solid #ccc',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            Add to cart <i className="fas fa-shopping-cart"></i>
           </button>
         </div>
       </div>
