@@ -8,14 +8,16 @@ import Product from "../Product/Product";
 import "./homepage.scss";
 
 const HomePage = () => {
-  const products = [];
-
   const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
 
   useEffect(() => {
     let isMounted = true;
 
-    dispatch(listProducts());
+    if (isMounted) {
+      dispatch(listProducts());
+    }
     return () => {
       isMounted = false;
     };
@@ -23,9 +25,11 @@ const HomePage = () => {
 
   return (
     <div className="homepage-container" data-testid="home-page">
-      {products
-        ? products.map((e) => <Product key={e._id} product={e} />)
-        : "Loading.."}
+      {loading
+        ? "Loading.."
+        : error
+        ? "Error"
+        : products.map((e) => <Product key={e._id} product={e} />)}
     </div>
   );
 };

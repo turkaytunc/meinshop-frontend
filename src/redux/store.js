@@ -4,7 +4,7 @@ import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { productListReducer } from "./reducers/productListReducer";
 
-const reducer = combineReducers({ productListReducer });
+const reducer = combineReducers({ productList: productListReducer });
 
 const initialState = {};
 
