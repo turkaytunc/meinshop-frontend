@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../Rating/Rating';
-import getProductById from '../../util/getProductById';
-import productsFetchUrl from '../../util/productsFetchUrl';
 import './product-details.scss';
 import PriceTag from '../PriceTag/PriceTag';
+import Loading from '../Loading/Loading';
 import { listProductDetails } from '../../redux/actions/productActions';
 
 const ProductDetails = ({ match }) => {
   const { id } = match.params;
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
-  const { loading, product, error } = productDetails;
+  const { loading, product } = productDetails;
 
   useEffect(() => {
     let isMounted = true;
@@ -24,7 +23,9 @@ const ProductDetails = ({ match }) => {
   }, [dispatch, id]);
 
   console.log(product.image);
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="product-details-container">
       <div className="details-img-button">
         <button className="goback-button">
