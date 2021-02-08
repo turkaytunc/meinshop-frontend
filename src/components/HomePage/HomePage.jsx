@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { listProducts } from "../../redux/actions/productActions";
+import { listProducts } from '../../redux/actions/productActions';
+import Loading from '../Loading/Loading';
 
-import Product from "../Product/Product";
+import Product from '../Product/Product';
 
-import "./homepage.scss";
+import './homepage.scss';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,6 @@ const HomePage = () => {
 
   useEffect(() => {
     let isMounted = true;
-
     if (isMounted) {
       dispatch(listProducts());
     }
@@ -25,11 +25,13 @@ const HomePage = () => {
 
   return (
     <div className="homepage-container" data-testid="home-page">
-      {loading
-        ? "Loading.."
-        : error
-        ? "Error"
-        : products.map((e) => <Product key={e._id} product={e} />)}
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        'Error'
+      ) : (
+        Array.isArray(products) && products.map((e) => <Product key={e._id} product={e} />)
+      )}
     </div>
   );
 };
