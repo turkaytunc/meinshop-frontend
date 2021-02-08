@@ -14,7 +14,6 @@ const HomePage = () => {
 
   useEffect(() => {
     let isMounted = true;
-
     if (isMounted) {
       dispatch(listProducts());
     }
@@ -29,7 +28,8 @@ const HomePage = () => {
         ? "Loading.."
         : error
         ? "Error"
-        : products.map((e) => <Product key={e._id} product={e} />)}
+        : Array.isArray(products) &&
+          products.map((e) => <Product key={e._id} product={e} />)}
     </div>
   );
 };
