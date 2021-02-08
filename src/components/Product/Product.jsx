@@ -5,7 +5,6 @@ import './product.scss';
 import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
-  console.log(product.reviews);
   return (
     <div className="product-container">
       <Link className="product-listitem product-link" to={`/products/${product._id}`}>

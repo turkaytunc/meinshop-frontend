@@ -25,11 +25,13 @@ const HomePage = () => {
 
   return (
     <div className="homepage-container" data-testid="home-page">
-      {loading
-        ? Loading
-        : error
-        ? 'Error'
-        : Array.isArray(products) && products.map((e) => <Product key={e._id} product={e} />)}
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        'Error'
+      ) : (
+        Array.isArray(products) && products.map((e) => <Product key={e._id} product={e} />)
+      )}
     </div>
   );
 };
