@@ -22,7 +22,6 @@ const ProductDetails = ({ match }) => {
     };
   }, [dispatch, id]);
 
-  console.log(product.image);
   return loading ? (
     <Loading />
   ) : (

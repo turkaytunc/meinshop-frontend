@@ -2,7 +2,7 @@ import React from 'react';
 import './loading.scss';
 
 const Loading = () => {
-  return <div>Loading...</div>;
+  return <div className="loading-container">Loading...</div>;
 };
 
 export default Loading;
