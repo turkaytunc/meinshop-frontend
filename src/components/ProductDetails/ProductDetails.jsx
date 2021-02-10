@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../Rating/Rating';
-import getProductById from '../../util/getProductById';
-import productsFetchUrl from '../../util/productsFetchUrl';
 import './product-details.scss';
 import PriceTag from '../PriceTag/PriceTag';
+import Loading from '../Loading/Loading';
 import { listProductDetails } from '../../redux/actions/productActions';
 
-const ProductDetails = ({ match }) => {
+const ProductDetails = ({ history, match }) => {
   const { id } = match.params;
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
-  const { loading, product, error } = productDetails;
+  const { loading, product } = productDetails;
 
   useEffect(() => {
     let isMounted = true;
@@ -23,8 +22,13 @@ const ProductDetails = ({ match }) => {
     };
   }, [dispatch, id]);
 
-  console.log(product.image);
-  return (
+  const addToCartHandler = () => {
+    history.push(`/cart/${id}`);
+  };
+
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="product-details-container">
       <div className="details-img-button">
         <button className="goback-button">
@@ -34,8 +38,8 @@ const ProductDetails = ({ match }) => {
       </div>
       <ul className="product-details-description-container">
         <li data-testid={'product-title'}>{product ? product.name : 'Loading..'}</li>
-        <div style={{ margin: '3em 0 1em 0' }}>
-          <Rating numberOfPeople={product?.reviews} productRating={4} starColor={'purple'} />
+        <div style={{ marginBottom: '0.5rem' }}>
+          <Rating numberOfPeople={product?.numReviews} productRating={product?.rating} starColor={'purple'} />
         </div>
         <hr />
         <li className="product-details-description">{product?.description}</li>
@@ -50,7 +54,7 @@ const ProductDetails = ({ match }) => {
             style={{
               width: '100%',
               height: '3em',
-              marginTop: '2em',
+              marginTop: '0.5rem',
               color: 'purple',
               backgroundColor: 'white',
               border: '1px solid #ccc',
@@ -58,6 +62,7 @@ const ProductDetails = ({ match }) => {
               cursor: 'pointer',
               fontWeight: 'bold',
             }}
+            onClick={addToCartHandler}
           >
             Add to cart <i className="fas fa-shopping-cart"></i>
           </button>

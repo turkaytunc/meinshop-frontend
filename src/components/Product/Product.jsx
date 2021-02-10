@@ -20,7 +20,7 @@ const Product = ({ product }) => {
           {product.description}
         </li> */}
 
-        <Rating productRating={product.rating} numberOfPeople={product.reviews} starColor={'purple'} />
+        <Rating productRating={product.rating} numberOfPeople={product.numReviews} starColor={'purple'} />
         <PriceTag price={product.price} />
       </ul>
     </div>

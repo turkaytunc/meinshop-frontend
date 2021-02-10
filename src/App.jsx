@@ -15,7 +15,7 @@ function App() {
         <main className="main-container">
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/cart" component={Cart} />
+            <Route path="/cart/:id?" component={Cart} />
             <Route path="/login" component={Login} />
             <Route path="/products/:id" component={ProductDetails} />
           </Switch>

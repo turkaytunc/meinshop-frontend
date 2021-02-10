@@ -1,13 +1,16 @@
 .nav-container {
   display: flex;
+  padding: 0;
   justify-content: space-between;
-  padding: 2em 1em;
+  align-items: center;
+  padding: 1rem 0.2rem;
   background: #353535;
   color: aliceblue;
 }
 
 .nav-brand {
   list-style: none;
+  padding: 0;
 }
 .nav-brand-link {
   text-decoration: none;
@@ -19,10 +22,10 @@
 .nav-ul {
   list-style: none;
   display: flex;
-}
-
-.nav-li {
-  margin-left: 2em;
+  padding: 0;
+  li {
+    padding-left: 0.2rem;
+  }
 }
 
 .nav-link {
