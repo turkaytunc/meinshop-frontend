@@ -36,7 +36,7 @@ const ProductDetails = ({ match }) => {
       <ul className="product-details-description-container">
         <li data-testid={'product-title'}>{product ? product.name : 'Loading..'}</li>
         <div style={{ margin: '3em 0 1em 0' }}>
-          <Rating numberOfPeople={product?.reviews} productRating={4} starColor={'purple'} />
+          <Rating numberOfPeople={product?.numReviews} productRating={product?.rating} starColor={'purple'} />
         </div>
         <hr />
         <li className="product-details-description">{product?.description}</li>
