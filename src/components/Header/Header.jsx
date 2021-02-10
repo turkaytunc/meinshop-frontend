@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./header.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './header.scss';
 
 const Header = () => {
   return (
@@ -12,8 +12,8 @@ const Header = () => {
               <i
                 className="fas fa-globe-europe"
                 style={{
-                  fontSize: "2em",
-                  marginRight: "0.1em",
+                  fontSize: '2em',
+                  marginRight: '0.1em',
                 }}
               ></i>
               MeinShop
@@ -21,17 +21,17 @@ const Header = () => {
           </li>
         </ul>
         <ul className="nav-ul">
-          <li className="nav-li">
+          <li>
             <Link className="nav-link" to="/">
               <i className="fas fa-store"></i> Home
             </Link>
           </li>
-          <li className="nav-li">
+          <li>
             <Link className="nav-link" to="/cart">
               <i className="fas fa-shopping-cart"></i> Cart
             </Link>
           </li>
-          <li className="nav-li">
+          <li>
             <Link className="nav-link" to="/login">
               <i className="fas fa-user"></i> Login
             </Link>
