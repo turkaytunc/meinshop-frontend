@@ -6,7 +6,7 @@ import PriceTag from '../PriceTag/PriceTag';
 import Loading from '../Loading/Loading';
 import { listProductDetails } from '../../redux/actions/productActions';
 
-const ProductDetails = ({ match }) => {
+const ProductDetails = ({ history, match }) => {
   const { id } = match.params;
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
@@ -21,6 +21,10 @@ const ProductDetails = ({ match }) => {
       isMounted = false;
     };
   }, [dispatch, id]);
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${id}`);
+  };
 
   return loading ? (
     <Loading />
@@ -58,6 +62,7 @@ const ProductDetails = ({ match }) => {
               cursor: 'pointer',
               fontWeight: 'bold',
             }}
+            onClick={addToCartHandler}
           >
             Add to cart <i className="fas fa-shopping-cart"></i>
           </button>
