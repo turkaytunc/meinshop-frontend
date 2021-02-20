@@ -1,5 +1,9 @@
+import { cleanup } from '@testing-library/react';
 import getProductById from '../util/getProductById';
 import productsFetchUrl from '../util/productsFetchUrl';
+
+beforeAll(() => jest.spyOn(window, 'fetch'));
+beforeEach(cleanup);
 
 const mock = {
   _id: '5fccda83acfe500d80c77fca',
@@ -22,7 +26,7 @@ const mock = {
 
 it('should get product with id=1', () => {
   return getProductById(
-    window.fetch,
+    window.fetch.mockResolvedValue({ json: () => Promise.resolve({ _id: '5fccda83acfe500d80c77fca' }) }),
     productsFetchUrl,
     '5fccda83acfe500d80c77fca'
   ).then((data) => expect(data._id).toEqual(mock._id));

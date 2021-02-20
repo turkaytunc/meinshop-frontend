@@ -1,31 +1,43 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, cleanup } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import ProductDetails from '../components/ProductDetails/ProductDetails';
 import { createBrowserHistory } from 'history';
 import setFunctionToSleep from '../util/setFunctionToSleep';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 
-it('should render without crash', () => {
-  const history = createBrowserHistory();
-  history.push('products/5');
-  render(
-    <Router history={history}>
-      <ProductDetails match={{ params: { id: 3 } }} />
-    </Router>
-  );
-});
+beforeEach(cleanup);
 
-it('should render loading.. then should render content', async () => {
-  const history = createBrowserHistory();
-  history.push('products/2');
+describe('<ProductDetails />', () => {
+  it('should render without crash', async () => {
+    const history = createBrowserHistory();
+    history.push('products/5');
+    render(
+      <Provider store={store}>
+        <Router history={history}>
+          <ProductDetails match={{ params: { id: 3 } }} />
+        </Router>
+      </Provider>
+    );
 
-  render(
-    <Router history={history}>
-      <ProductDetails match={{ params: { id: '5fccda83acfe500d80c77fca' } }} />
-    </Router>
-  );
+    await act(() => setFunctionToSleep(1000));
+  });
 
-  const title = screen.queryByTestId('product-title');
-  expect(title.textContent).toBe('Loading..');
-  await act(() => setFunctionToSleep(1000));
-  expect(title.textContent).toBe('Mens Casual Premium Slim Fit T-Shirts ');
+  it('should render loading.. then should render content', async () => {
+    const history = createBrowserHistory();
+    history.push('products/2');
+
+    render(
+      <Provider store={store}>
+        <Router history={history}>
+          <ProductDetails match={{ params: { id: '5fccda83acfe500d80c77fca' } }} />
+        </Router>
+      </Provider>
+    );
+
+    const title = screen.queryByTestId('product-title');
+    expect(title.textContent).toBe('Loading..');
+    await act(() => setFunctionToSleep(1000));
+    expect(title.textContent).toBe('Mens Casual Premium Slim Fit T-Shirts ');
+  });
 });

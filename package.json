@@ -24,8 +24,27 @@
     "build": "react-scripts build",
     "commit": "sh commit.sh",
     "test": "react-scripts test",
-    "testAll": "react-scripts test --coverage --watchAll",
+    "test:all": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.(js|jsx)",
+      "!src/index.js",
+      "!src/redux/**/*.(js|jsx)"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
   },
   "eslintConfig": {
     "extends": [
